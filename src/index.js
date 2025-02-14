@@ -6,7 +6,10 @@ import connectDB from "./db/index.js";
 dotenv.config({
   path: './env '
 });
-connectDB();
+connectDB() .then( () => {
+  console.log("Connected!");
+})
+.catch((err) => {console.log(`${err}`)})
 
 
 
